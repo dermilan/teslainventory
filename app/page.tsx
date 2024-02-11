@@ -44,8 +44,6 @@ export default async function Page() {
   return (
     <>
       <h1>tesla inventory frame</h1>
-      <p>Number of available Model Y cars in the US: {data.total_matches_found}</p>
-      <p>Number of available Model Y cars in the US: {data}</p>
     </>
   );
 }
