@@ -44,6 +44,7 @@ export default async function Page() {
   return (
     <>
       <h1>tesla inventory frame</h1>
+      <p>fetched data: {data}</p>
     </>
   );
 }
