@@ -44,7 +44,7 @@ export default async function Page() {
   return (
     <>
       <h1>tesla inventory frame</h1>
-      <p>fetched data: {data}</p>
+      <p>fetched data: {data.total_matches_found}</p>
     </>
   );
 }
