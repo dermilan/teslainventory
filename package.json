@@ -1,6 +1,6 @@
 {
-  "name": "a-frame-in-100-lines",
-  "version": "0.5.1",
+  "name": "teslainventory",
+  "version": "0.0.1",
   "scripts": {
     "build": "rm -rf .next && next build",
     "dev": "next dev",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "https://twitter.com/Zizzamia",
+  "author": "https://warpcast.com/dermilan.eth",
   "license": "MIT",
   "dependencies": {
     "@coinbase/onchainkit": "0.6.1",
