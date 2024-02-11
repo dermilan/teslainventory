@@ -37,11 +37,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+
+  const data = await getData()
+
   return (
     <>
       <h1>tesla inventory frame</h1>
-      <p>Number of available Model Y cars in the US: </p>
+      <p>Number of available Model Y cars in the US: {data}</p>
     </>
   );
 }
+
+async function getData() {
+  const res = await fetch('https://api.example.com/...')
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+ 
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return res.json()
+}
+ 
