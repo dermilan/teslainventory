@@ -1,6 +1,8 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from './config';
+import { fetchTeslaInventory } from './utils/fetchTeslaInventory';
+
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -37,10 +39,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default function Page({modelYInventory}) {
   return (
     <>
       <h1>tesla inventory frame</h1>
+      <p>Number of available Model Y cars in the US: {modelYInventory}</p>
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const data = await fetchTeslaInventory();
+  const modelYInventory = data ? data.inventory.modelY.us.available : 0;
+  
+  return {
+    props: {
+      modelYInventory,
+    },
+  };
+};
