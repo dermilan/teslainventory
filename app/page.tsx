@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'teslainventory',
     description: 'LFG',
-    images: [`${NEXT_PUBLIC_URL}/home.png`],
+    images: [`${NEXT_PUBLIC_URL}/home-min.png`],
   },
   other: {
     ...frameMetadata,
