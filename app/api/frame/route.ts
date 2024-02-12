@@ -36,7 +36,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           src: `${NEXT_PUBLIC_URL}/models-min.png`,
           aspectRatio: '1:1',
         },
-        postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+        postUrl: `${NEXT_PUBLIC_URL}/api/home`,
       }),
     );
     
