@@ -1,8 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from './config';
-import { NextRequest } from 'next/server';
-
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -68,7 +66,4 @@ async function getData() {
   return res.json()
 }
 
-export async function POST(req: NextRequest) {
-  console.log("post in page.tsx called.")
-}
 
