@@ -9,6 +9,7 @@ const frameMetadata = getFrameMetadata({
     },
     {
       label: '3',
+      action: 'post_redirect',
     },
     {
       label: 'X',
