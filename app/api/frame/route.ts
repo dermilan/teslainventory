@@ -36,7 +36,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           src: `${NEXT_PUBLIC_URL}/models-min.png`,
           aspectRatio: '1:1',
         },
-        postUrl: `${NEXT_PUBLIC_URL}`,
+        postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
       }),
     );
     
@@ -62,7 +62,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           src: `${NEXT_PUBLIC_URL}/model3-min.png`,
           aspectRatio: '1:1',
         },
-        postUrl: `${NEXT_PUBLIC_URL}`,
+        postUrl: `${NEXT_PUBLIC_URL}/api/home`,
       }),
     );
     
@@ -88,7 +88,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           src: `${NEXT_PUBLIC_URL}/modelx-min.png`,
           aspectRatio: '1:1',
         },
-        postUrl: `${NEXT_PUBLIC_URL}`,
+        postUrl: `${NEXT_PUBLIC_URL}/api/home`,
       }),
     );
     
@@ -114,7 +114,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           src: `${NEXT_PUBLIC_URL}/modely-min.png`,
           aspectRatio: '1:1',
         },
-        postUrl: `${NEXT_PUBLIC_URL}`,
+        postUrl: `${NEXT_PUBLIC_URL}/api/home`,
       }),
     );
     
@@ -131,7 +131,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         src: `${NEXT_PUBLIC_URL}/home-min.png`,
         aspectRatio: '1:1',
       },
-      postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+      postUrl: `${NEXT_PUBLIC_URL}/api/home`,
     }),
   );
 }
