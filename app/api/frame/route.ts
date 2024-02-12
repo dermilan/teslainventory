@@ -26,6 +26,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           {
             label: `Go Back`,
           },
+          {
+            action: 'link',
+            label: 'Visit Tesla.com',
+            target: 'https://www.tesla.com/inventory/new?referral=milan88648&redirect=no',
+          },
         ],
         image: {
           src: `${NEXT_PUBLIC_URL}/models.png`,
@@ -46,6 +51,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         buttons: [
           {
             label: `Go Back`,
+          },
+          {
+            action: 'link',
+            label: 'Visit Tesla.com',
+            target: 'https://www.tesla.com/inventory/new?referral=milan88648&redirect=no',
           },
         ],
         image: {
@@ -68,6 +78,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           {
             label: `Go Back`,
           },
+          {
+            action: 'link',
+            label: 'Visit Tesla.com',
+            target: 'https://www.tesla.com/inventory/new?referral=milan88648&redirect=no',
+          },
         ],
         image: {
           src: `${NEXT_PUBLIC_URL}/modelx.png`,
@@ -88,6 +103,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         buttons: [
           {
             label: `Go Back`,
+          },
+          {
+            action: 'link',
+            label: 'Visit Tesla.com',
+            target: 'https://www.tesla.com/inventory/new?referral=milan88648&redirect=no',
           },
         ],
         image: {
