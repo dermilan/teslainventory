@@ -13,19 +13,26 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     accountAddress = message.interactor.verified_accounts[0];
   }
 
-  if (message?.input) {
-    text = message.input;
-  }
-
   if (message?.button === 3) {
 
     console.log("button 3 pressed");
     
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: 'Go Back',
+          },
+        ],
+      }
 
-    return NextResponse.redirect(
-      'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
-      { status: 302 },
-    );
+      )
+    )
+
+    // return NextResponse.redirect(
+    //   'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
+    //   { status: 302 },
+    // );
   }
 
   return new NextResponse(
