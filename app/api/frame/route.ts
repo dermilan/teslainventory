@@ -19,6 +19,21 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   if (message?.button === 1) {
 
     console.log("button 1 pressed");
+
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: `Go Back`,
+          },
+        ],
+        image: {
+          src: `${NEXT_PUBLIC_URL}/models.png`,
+          aspectRatio: '1:1',
+        },
+        postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+      }),
+    );
     
   }
 
@@ -48,7 +63,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         },
       ],
       image: {
-        src: `${NEXT_PUBLIC_URL}/modely.png`,
+        src: `${NEXT_PUBLIC_URL}/home.png`,
+        aspectRatio: '1:1',
       },
       postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
     }),
