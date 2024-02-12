@@ -120,6 +120,43 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     
   }
 
+
+
+if (message?.button.label === 'Go Back')
+
+{
+  
+  console.log("button Back pressed");
+
+  return new NextResponse(
+    getFrameHtmlResponse({
+      buttons: [
+        {
+          label: `S`,
+        },
+        {
+          label: `3`,
+        },
+        {
+          label: `X`,
+        },
+        {
+          label: `Y`,
+        },
+  
+      ],
+      image: {
+        src: `${NEXT_PUBLIC_URL}/home-min.png`,
+        aspectRatio: '1:1',
+      },
+      postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+    }),
+  );
+
+
+}
+
+
   return new NextResponse(
     getFrameHtmlResponse({
       buttons: [
