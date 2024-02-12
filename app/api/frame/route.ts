@@ -31,7 +31,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           src: `${NEXT_PUBLIC_URL}/models.png`,
           aspectRatio: '1:1',
         },
-        postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+        postUrl: `${NEXT_PUBLIC_URL}`,
       }),
     );
     
@@ -40,18 +40,63 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   if (message?.button === 2) {
 
     console.log("button 2 pressed");
+
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: `Go Back`,
+          },
+        ],
+        image: {
+          src: `${NEXT_PUBLIC_URL}/model3.png`,
+          aspectRatio: '1:1',
+        },
+        postUrl: `${NEXT_PUBLIC_URL}`,
+      }),
+    );
     
   }
 
   if (message?.button === 3) {
 
     console.log("button 3 pressed");
+
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: `Go Back`,
+          },
+        ],
+        image: {
+          src: `${NEXT_PUBLIC_URL}/modelx.png`,
+          aspectRatio: '1:1',
+        },
+        postUrl: `${NEXT_PUBLIC_URL}`,
+      }),
+    );
     
   }
 
   if (message?.button === 4) {
 
     console.log("button 4 pressed");
+
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: `Go Back`,
+          },
+        ],
+        image: {
+          src: `${NEXT_PUBLIC_URL}/modely.png`,
+          aspectRatio: '1:1',
+        },
+        postUrl: `${NEXT_PUBLIC_URL}`,
+      }),
+    );
     
   }
 
