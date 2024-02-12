@@ -13,6 +13,54 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     accountAddress = message.interactor.verified_accounts[0];
   }
 
+  if (message?.button === 1) {
+
+    console.log("button 1 pressed");
+    
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: `Back`,
+          },
+        ],
+        image: {
+          src: `${NEXT_PUBLIC_URL}/park-1.png`,
+        },
+        postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+      }),
+    );
+
+    // return NextResponse.redirect(
+    //   'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
+    //   { status: 302 },
+    // );
+  }
+
+  if (message?.button === 2) {
+
+    console.log("button 2 pressed");
+    
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: `Back`,
+          },
+        ],
+        image: {
+          src: `${NEXT_PUBLIC_URL}/park-1.png`,
+        },
+        postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+      }),
+    );
+
+    // return NextResponse.redirect(
+    //   'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
+    //   { status: 302 },
+    // );
+  }
+
   if (message?.button === 3) {
 
     console.log("button 3 pressed");
@@ -37,19 +85,43 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     // );
   }
 
-  return new NextResponse(
-    getFrameHtmlResponse({
-      buttons: [
-        {
-          label: `Story: ${text} 🌲`,
+  if (message?.button === 4) {
+
+    console.log("button 4 pressed");
+    
+    return new NextResponse(
+      getFrameHtmlResponse({
+        buttons: [
+          {
+            label: `Back`,
+          },
+        ],
+        image: {
+          src: `${NEXT_PUBLIC_URL}/park-1.png`,
         },
-      ],
-      image: {
-        src: `${NEXT_PUBLIC_URL}/park-1.png`,
-      },
-      postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
-    }),
-  );
+        postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+      }),
+    );
+
+    // return NextResponse.redirect(
+    //   'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
+    //   { status: 302 },
+    // );
+  }
+
+  // return new NextResponse(
+  //   getFrameHtmlResponse({
+  //     buttons: [
+  //       {
+  //         label: `Story: ${text} 🌲`,
+  //       },
+  //     ],
+  //     image: {
+  //       src: `${NEXT_PUBLIC_URL}/park-1.png`,
+  //     },
+  //     postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+  //   }),
+  // );
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
