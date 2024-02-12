@@ -24,17 +24,23 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       getFrameHtmlResponse({
         buttons: [
           {
-            label: `1`,
+            label: `S`,
           },
           {
-            label: '2',
+            label: '3',
+          },
+          {
+            label: `X`,
+          },
+          {
+            label: 'Y',
           },
         ],
         image: {
           src: `${NEXT_PUBLIC_URL}/home-min.png`,
           aspectRatio: '1:1',
         },
-        postUrl: `${NEXT_PUBLIC_URL}`,
+        postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
       }),
     );
     
