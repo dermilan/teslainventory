@@ -21,13 +21,15 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
       getFrameHtmlResponse({
         buttons: [
           {
-            label: 'Go Back',
+            label: `Back`,
           },
         ],
-      }
-
-      )
-    )
+        image: {
+          src: `${NEXT_PUBLIC_URL}/park-1.png`,
+        },
+        postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+      }),
+    );
 
     // return NextResponse.redirect(
     //   'https://www.google.com/search?q=cute+dog+pictures&tbm=isch&source=lnms',
