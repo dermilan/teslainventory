@@ -41,6 +41,8 @@ export default async function Page() {
 
   const data = await getData()
 
+  console.log('logging from Page()')
+
   return (
     <>
       <h1>tesla inventory frame</h1>
