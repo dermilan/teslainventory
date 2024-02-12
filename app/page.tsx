@@ -50,7 +50,7 @@ export default async function Page() {
 }
 
 async function getData() {
-  const res = await fetch('https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"my","condition":"new","arrangeby":"Price","order":"desc","market":"US","language":"en","super_region":"north america","lng":-122.1257,"lat":47.6722,"zip":"98052","range":0},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}')
+  const res = await fetch('https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"my","condition":"new","arrangeby":"Price","order":"desc","market":"US","language":"en","super_region":"north america","lng":-122.1257,"lat":47.6722,"zip":"98052","range":0},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}',  { next: { revalidate: 3600 } })
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
  
@@ -62,3 +62,4 @@ async function getData() {
   return res.json()
 }
  
+
