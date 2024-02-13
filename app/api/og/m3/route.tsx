@@ -9,8 +9,8 @@ export const runtime = 'edge';
  
 export async function GET() {
 
-  const data_my = await getData();
-  const totalmatches = data_my.total_matches_found;
+  const data = await getData();
+  const totalmatches = await data.total_matches_found;
 
   return new ImageResponse(
     (
@@ -43,7 +43,7 @@ Model 3: {totalmatches} available in the US.
 
 async function getData() {
 
-  console.log('logging from getData()')
+  console.log('logging from m3 route getData()')
   const query: string = `https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"m3","condition":"new","options":{},"arrangeby":"Relevance","order":"desc","market":"US","language":"en","super_region":"north america"},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}`;
   const res = await fetch(query, { next: { revalidate: 3600 } })
  
