@@ -111,7 +111,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           },
         ],
         image: {
-          src: `${NEXT_PUBLIC_URL}/modely-min.png`,
+          src: `${NEXT_PUBLIC_URL}/api/og`,
           aspectRatio: '1:1',
         },
         postUrl: `${NEXT_PUBLIC_URL}/api/home`,
