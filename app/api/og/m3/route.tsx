@@ -17,6 +17,8 @@ export async function GET() {
   console.log(data); // 'value'
   console.log(typeof(data));
 
+  let stringdata = data.toString();
+
   return new ImageResponse(
     (
       
@@ -36,7 +38,7 @@ export async function GET() {
         alignItems: 'flex-end',
         }}
       >
-Model 3: Currently available in the US. 
+Model 3: {stringdata} Currently available in the US. 
       </div>
     ),
     {
