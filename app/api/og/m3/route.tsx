@@ -1,15 +1,15 @@
 import { ImageResponse } from "@vercel/og";
 import { NEXT_PUBLIC_URL } from '../../../config';
 
-
 // App router includes @vercel/og.
 // No need to install it.
  
 export const runtime = 'edge';
 
 
+
  
-export async function GET() {
+export async function GET(amount: number) {
   return new ImageResponse(
     (
       
@@ -29,7 +29,7 @@ export async function GET() {
         alignItems: 'flex-end',
         }}
       >
-Model 3: Currently available in the US. 
+Model 3: {amount} Currently available in the US. 
       </div>
     ),
     {
