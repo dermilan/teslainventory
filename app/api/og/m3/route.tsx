@@ -16,7 +16,7 @@ export async function GET() {
   let data = await kv.get('m3');
   console.log(data); // 'value'
   console.log(typeof(data));
-  const str: string = `${data}`
+  const str: string = `${data}`;
 
   return new ImageResponse(
     (
