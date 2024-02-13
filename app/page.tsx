@@ -62,7 +62,8 @@ async function getData(model: string) {
 
   console.log('logging from getData()')
   const query: string = 'https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"${model}","condition":"new","options":{},"arrangeby":"Relevance","order":"desc","market":"US","language":"en","super_region":"north america"},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}';
-  const res = await fetch(query, { next: { revalidate: 3600 } })
+  //const res = await fetch(query, { next: { revalidate: 3600 } })
+  const res = await fetch(query)
   
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
