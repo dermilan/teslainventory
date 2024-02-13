@@ -6,7 +6,7 @@ import { NEXT_PUBLIC_URL } from '../../config';
  
 export const runtime = 'edge';
  
-export async function GET({data_my}) {
+export async function GET() {
   return new ImageResponse(
     (
       
@@ -26,7 +26,7 @@ export async function GET({data_my}) {
         alignItems: 'flex-end',
         }}
       >
-Model Y: Currently ${data_my.total_matches_found} available in the US. 
+Model Y: Currently 99 available in the US. 
       </div>
     ),
     {
