@@ -7,6 +7,9 @@ import { NEXT_PUBLIC_URL } from '../../../config';
  
 export const runtime = 'edge';
 
+const data_my = await getData();
+const totalmatches = data_my.total_matches_found;
+
 
  
 export async function GET() {
@@ -29,7 +32,7 @@ export async function GET() {
         alignItems: 'flex-end',
         }}
       >
-Model 3: Currently available in the US. 
+Model 3: {totalmatches} available in the US. 
       </div>
     ),
     {
@@ -37,5 +40,19 @@ Model 3: Currently available in the US.
       height: 900,
     },
   );
+}
+
+async function getData() {
+
+  console.log('logging from getData()')
+  const query: string = `https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"m3","condition":"new","options":{},"arrangeby":"Relevance","order":"desc","market":"US","language":"en","super_region":"north america"},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}`;
+  const res = await fetch(query, { next: { revalidate: 3600 } })
+ 
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return res.json()
 }
 
