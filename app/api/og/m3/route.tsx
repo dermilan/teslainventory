@@ -40,7 +40,7 @@ Model 3: {data.total_matches_found} available in the US.
   );
 }
 
-  catch (error) {
+  catch (error: any) {
     console.error("Error fetching data:", error.message);
     // Return an error response
     return new Response("Failed to fetch data", { status: 500 });
