@@ -29,7 +29,7 @@ export async function GET() {
         alignItems: 'flex-end',
         }}
       >
-Model 3: {amount} Currently available in the US. 
+Model 3: xxx Currently available in the US. 
       </div>
     ),
     {
