@@ -1,5 +1,6 @@
 import { ImageResponse } from "@vercel/og";
 import { NEXT_PUBLIC_URL } from '../../../config';
+import { kv } from '@vercel/kv';
 
 // App router includes @vercel/og.
 // No need to install it.
@@ -29,7 +30,7 @@ export async function GET() {
         alignItems: 'flex-end',
         }}
       >
-Model 3: xxx Currently available in the US. 
+Model 3: {kv.get('m3')} Currently available in the US. 
       </div>
     ),
     {
