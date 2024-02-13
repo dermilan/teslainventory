@@ -1,6 +1,7 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from './config';
+ 
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -54,6 +55,7 @@ export default async function Page() {
       <p>fetched data m3: {data_m3.total_matches_found}</p>
       <p>fetched data mx: {data_mx.total_matches_found}</p>
       <p>fetched data ms: {data_ms.total_matches_found}</p>
+
     </>
   );
 }
