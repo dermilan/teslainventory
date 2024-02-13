@@ -1,5 +1,7 @@
 import { ImageResponse } from "@vercel/og";
 import { NEXT_PUBLIC_URL } from '../../../config';
+import { kv } from '@vercel/kv';
+
 
 
 // App router includes @vercel/og.
@@ -10,6 +12,10 @@ export const runtime = 'edge';
 
  
 export async function GET() {
+
+  let data = await kv.get('ms');
+  const str: string = `${data}`;
+
   return new ImageResponse(
     (
       
@@ -29,7 +35,7 @@ export async function GET() {
         alignItems: 'flex-end',
         }}
       >
-Model S: Currently available in the US. 
+      {`Model S: Currently ${str} available in the US.`}
       </div>
     ),
     {
