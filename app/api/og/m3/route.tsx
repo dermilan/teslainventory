@@ -12,7 +12,13 @@ export const runtime = 'edge';
  
 export async function GET() {
 
-  let data: string = await kv.get('m3');
+  const value = await kv.get('m3');
+  let stringValue: string = 'xx';
+
+  if (value !== null)
+  {
+     stringValue = value;
+  }
 
   return new ImageResponse(
     (
@@ -33,7 +39,7 @@ export async function GET() {
         alignItems: 'flex-end',
         }}
       >
-Model 3: {data} Currently available in the US. 
+Model 3: {stringValue} Currently available in the US. 
       </div>
     ),
     {
