@@ -18,8 +18,6 @@ export async function GET() {
   console.log(typeof(data));
   const str: string = `${data}`;
 
-  const blabla: string = 'blabla';
-
   return new ImageResponse(
     (
       
@@ -39,7 +37,7 @@ export async function GET() {
         alignItems: 'flex-end',
         }}
       >
-Model 3: {blabla} Currently available in the US. 
+      {`Model Y: Currently ${str} available in the US.`}
       </div>
     ),
     {
