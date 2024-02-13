@@ -1,6 +1,8 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from './config';
+import { kv } from '@vercel/kv';
+
  
 
 const frameMetadata = getFrameMetadata({
@@ -45,6 +47,9 @@ export default async function Page() {
   const data_ms = await getData('mx')
   const data_mx = await getData('ms')
 
+  await kv.set('m3', data_m3);
+  let data = await kv.get('m3');
+  console.log(data); // 'value'
 
   console.log('logging from Page()')
 
