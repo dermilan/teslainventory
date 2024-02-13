@@ -1,6 +1,5 @@
-import { ImageResponse } from 'next/og';
-import { NEXT_PUBLIC_URL } from './config';
-
+import { ImageResponse } from "@vercel/og";
+import { NEXT_PUBLIC_URL } from '../../config';
 
 // App router includes @vercel/og.
 // No need to install it.
