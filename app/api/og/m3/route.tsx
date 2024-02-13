@@ -6,13 +6,12 @@ import { NEXT_PUBLIC_URL } from '../../../config';
 // No need to install it.
  
 export const runtime = 'edge';
-
-const data_my = await getData();
-const totalmatches = data_my.total_matches_found;
-
-
  
 export async function GET() {
+
+  const data_my = await getData();
+  const totalmatches = data_my.total_matches_found;
+
   return new ImageResponse(
     (
       
