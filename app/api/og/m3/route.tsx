@@ -5,7 +5,7 @@ import { NEXT_PUBLIC_URL } from '../../../config';
 // App router includes @vercel/og.
 // No need to install it.
  
-export const runtime = 'edge';
+// export const runtime = 'edge';
  
 export async function GET() {
 
