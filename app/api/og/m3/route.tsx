@@ -16,6 +16,7 @@ export async function GET() {
   let data = await kv.get('m3');
   console.log(data); // 'value'
   console.log(typeof(data));
+  const str: string = `${data}`
 
   return new ImageResponse(
     (
@@ -36,7 +37,7 @@ export async function GET() {
         alignItems: 'flex-end',
         }}
       >
-Model 3: {data} Currently available in the US. 
+Model 3: {str} Currently available in the US. 
       </div>
     ),
     {
