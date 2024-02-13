@@ -38,45 +38,45 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Page() {
+// export default async function Page() {
 
-  const data_my = await getData('my')
-  const data_m3 = await getData('m3')
-  const data_ms = await getData('mx')
-  const data_mx = await getData('ms')
+//   const data_my = await getData('my')
+//   const data_m3 = await getData('m3')
+//   const data_ms = await getData('mx')
+//   const data_mx = await getData('ms')
 
 
-  console.log('logging from Page()')
+//   console.log('logging from Page()')
 
-  return (
-    <>
-      <h1>tesla inventory frame</h1>
-      <p>fetched data my: {data_my.total_matches_found}</p>
-      <p>fetched data m3: {data_m3.total_matches_found}</p>
-      <p>fetched data mx: {data_mx.total_matches_found}</p>
-      <p>fetched data ms: {data_ms.total_matches_found}</p>
+//   return (
+//     <>
+//       <h1>tesla inventory frame</h1>
+//       <p>fetched data my: {data_my.total_matches_found}</p>
+//       <p>fetched data m3: {data_m3.total_matches_found}</p>
+//       <p>fetched data mx: {data_mx.total_matches_found}</p>
+//       <p>fetched data ms: {data_ms.total_matches_found}</p>
 
-    </>
-  );
-}
+//     </>
+//   );
+// }
 
-async function getData(model: string) {
+// async function getData(model: string) {
 
-  console.log('logging from getData()')
-  const query: string = `https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"${model}","condition":"new","options":{},"arrangeby":"Relevance","order":"desc","market":"US","language":"en","super_region":"north america"},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}`;
-  const res = await fetch(query, { next: { revalidate: 3600 } })
-  //const res = await fetch(query)
+//   console.log('logging from getData()')
+//   const query: string = `https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"${model}","condition":"new","options":{},"arrangeby":"Relevance","order":"desc","market":"US","language":"en","super_region":"north america"},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}`;
+//   const res = await fetch(query, { next: { revalidate: 3600 } })
+//   //const res = await fetch(query)
   
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+//   // The return value is *not* serialized
+//   // You can return Date, Map, Set, etc.
  
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
-  }
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     throw new Error('Failed to fetch data')
+//   }
  
-  return res.json()
-}
+//   return res.json()
+// }
 
 
 
