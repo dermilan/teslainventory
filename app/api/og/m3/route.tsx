@@ -10,7 +10,7 @@ export const runtime = 'edge';
 export async function GET() {
 
   const data = await getData();
-
+try{
   return new ImageResponse(
     (
       
@@ -40,11 +40,20 @@ Model 3: {data.total_matches_found} available in the US.
   );
 }
 
+  catch (error) {
+    console.error("Error fetching data:", error.message);
+    // Return an error response
+    return new Response("Failed to fetch data", { status: 500 });
+  }
+  
+
+}
+
 async function getData(): Promise<any> {
 
   console.log('logging from m3 route getData()')
   const query: string = `https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"m3","condition":"new","options":{},"arrangeby":"Relevance","order":"desc","market":"US","language":"en","super_region":"north america"},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}`;
-  const res = await fetch(query, { next: { revalidate: 3600 } })
+  const res = await fetch(query);
  
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
