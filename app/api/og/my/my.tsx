@@ -1,5 +1,5 @@
 import { ImageResponse } from "@vercel/og";
-import { NEXT_PUBLIC_URL } from '../../config';
+import { NEXT_PUBLIC_URL } from '../../../config';
 
 
 // App router includes @vercel/og.
