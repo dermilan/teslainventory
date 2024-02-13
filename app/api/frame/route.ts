@@ -18,8 +18,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   if (message?.button === 1) {
 
-    console.log("button 1 pressed");
-
     return new NextResponse(
       getFrameHtmlResponse({
         buttons: [
@@ -43,8 +41,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 
   if (message?.button === 2) {
-
-    console.log("button 2 pressed");
 
     return new NextResponse(
       getFrameHtmlResponse({
@@ -70,8 +66,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   if (message?.button === 3) {
 
-    console.log("button 3 pressed");
-
     return new NextResponse(
       getFrameHtmlResponse({
         buttons: [
@@ -95,8 +89,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 
   if (message?.button === 4) {
-
-    console.log("button 4 pressed");
 
     return new NextResponse(
       getFrameHtmlResponse({

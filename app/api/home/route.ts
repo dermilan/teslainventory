@@ -18,8 +18,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   if (message?.button === 1) {
 
-    console.log("button 1 pressed");
-
     return new NextResponse(
       getFrameHtmlResponse({
         buttons: [

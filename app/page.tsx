@@ -52,11 +52,6 @@ export default async function Page() {
   await kv.set('mx', data_mx.total_matches_found);
   await kv.set('ms', data_ms.total_matches_found);
 
-  let data = await kv.get('m3');
-  console.log(data); // 'value'
-
-  console.log('logging from Page()')
-
   return (
     <>
        <h1>tesla inventory frame</h1>
@@ -71,7 +66,6 @@ export default async function Page() {
 
 async function getData(model: string) {
 
-  console.log('logging from getData()')
   const query: string = `https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"${model}","condition":"new","options":{},"arrangeby":"Relevance","order":"desc","market":"US","language":"en","super_region":"north america"},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}`;
   const res = await fetch(query, { next: { revalidate: 3600 } })
   

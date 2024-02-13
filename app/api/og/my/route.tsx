@@ -7,8 +7,6 @@ import { kv } from '@vercel/kv';
 // No need to install it.
  
 export const runtime = 'edge';
-
-
  
 export async function GET() {
 
