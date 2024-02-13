@@ -6,7 +6,7 @@ import { NEXT_PUBLIC_URL } from '../../config';
  
 export const runtime = 'edge';
 
-export const data_my = await getData('my');
+const data_my = await getData('my');
 
 const matches = data_my.total_matches_found;
  
