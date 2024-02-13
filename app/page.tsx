@@ -48,6 +48,10 @@ export default async function Page() {
   const data_mx = await getData('ms')
 
   await kv.set('m3', data_m3.total_matches_found);
+  await kv.set('my', data_my.total_matches_found);
+  await kv.set('mx', data_mx.total_matches_found);
+  await kv.set('ms', data_ms.total_matches_found);
+
   let data = await kv.get('m3');
   console.log(data); // 'value'
 
