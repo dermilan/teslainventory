@@ -9,7 +9,7 @@ export const runtime = 'edge';
 
 
  
-export async function GET(amount: number) {
+export async function GET() {
   return new ImageResponse(
     (
       
