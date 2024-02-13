@@ -12,7 +12,7 @@ export const runtime = 'edge';
  
 export async function GET() {
 
-  let data = await kv.get('m3');
+  let data: string = await kv.get('m3');
 
   return new ImageResponse(
     (
