@@ -25,7 +25,7 @@ export async function GET() {
         fontSize: 40,
         fontWeight: 700,
         letterSpacing: -2,
-        backgroundImage: `url('${NEXT_PUBLIC_URL}/home-min.png')`,
+        backgroundImage: `url('${NEXT_PUBLIC_URL}/models-min.png')`,
         color: 'yellow',
         width: '100%',
         height: '100%',
