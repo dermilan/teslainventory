@@ -51,7 +51,7 @@ export default async function Page() {
   await kv.set('my', data_my.total_matches_found);
   await kv.set('mx', data_mx.total_matches_found);
   await kv.set('ms', data_ms.total_matches_found);
-  await kv.set('lastUpdate', Date.now())
+  await kv.set('lastUpdate', Date.now());
 
   return (
     <>
