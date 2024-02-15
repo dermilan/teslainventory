@@ -51,6 +51,7 @@ export default async function Page() {
   await kv.set('my', data_my.total_matches_found);
   await kv.set('mx', data_mx.total_matches_found);
   await kv.set('ms', data_ms.total_matches_found);
+  await kv.set('lastUpdate', )
 
   return (
     <>
@@ -67,7 +68,7 @@ export default async function Page() {
 async function getData(model: string) {
 
   const query: string = `https://www.tesla.com/inventory/api/v4/inventory-results?query={"query":{"model":"${model}","condition":"new","options":{},"arrangeby":"Relevance","order":"desc","market":"US","language":"en","super_region":"north america"},"offset":0,"count":50,"outsideOffset":0,"outsideSearch":false,"isFalconDeliverySelectionEnabled":true,"version":"v2"}`;
-  const res = await fetch(query, { next: { revalidate: 3600 } })
+  const res = await fetch(query, { next: { revalidate: 600 } })
   
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
