@@ -14,7 +14,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 
   buttonPressed = message?.button;
-  console.log('button pressed is: ' + buttonPressed);
 
   if (message?.button === 1) {
 
@@ -31,7 +30,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           },
         ],
         image: {
-          src: `${NEXT_PUBLIC_URL}/api/og/ms`,
+          src: `${NEXT_PUBLIC_URL}/api/og/ms?timestamp=${new Date().getTime()}`,
           aspectRatio: '1:1',
         },
         postUrl: `${NEXT_PUBLIC_URL}/api/home`,
@@ -55,7 +54,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           },
         ],
         image: {
-          src: `${NEXT_PUBLIC_URL}/api/og/m3`,
+          src: `${NEXT_PUBLIC_URL}/api/og/m3?timestamp=${new Date().getTime()}`,
           aspectRatio: '1:1',
         },
         postUrl: `${NEXT_PUBLIC_URL}/api/home`,
@@ -79,7 +78,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           },
         ],
         image: {
-          src: `${NEXT_PUBLIC_URL}/api/og/mx`,
+          src: `${NEXT_PUBLIC_URL}/api/og/mx?timestamp=${new Date().getTime()}`,
           aspectRatio: '1:1',
         },
         postUrl: `${NEXT_PUBLIC_URL}/api/home`,
@@ -103,7 +102,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           },
         ],
         image: {
-          src: `${NEXT_PUBLIC_URL}/api/og/my`,
+          src: `${NEXT_PUBLIC_URL}/api/og/my?timestamp=${new Date().getTime()}`,
           aspectRatio: '1:1',
         },
         postUrl: `${NEXT_PUBLIC_URL}/api/home`,
@@ -120,7 +119,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
         },
       ],
       image: {
-        src: `${NEXT_PUBLIC_URL}/home-min.png`,
+        src: `${NEXT_PUBLIC_URL}/home-min.png?timestamp=${new Date().getTime()}`,
         aspectRatio: '1:1',
       },
       postUrl: `${NEXT_PUBLIC_URL}/api/home`,
