@@ -12,7 +12,7 @@ export async function GET() {
 
   let data = await kv.get('m3');
 
-  let lastFetchTimestamp:number = await kv.get('lastUpdate');
+  let lastFetchTimestamp:number | null = await kv.get('lastUpdate');
 
   if (lastFetchTimestamp !== null) {
     let timeStamp: string = new Date(lastFetchTimestamp).toLocaleString();
