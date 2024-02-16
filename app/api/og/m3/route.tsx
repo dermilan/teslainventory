@@ -11,7 +11,8 @@ export async function GET() {
 
 
   let data = await kv.get('m3');
-  let timeStamp: string = new Date(kv.get('lastUpdate')).toLocaleString();
+  let lastFetchTimestamp = await kv.get('lastUpdate');
+  let timeStamp: string = new Date(lastFetchTimestamp).toLocaleString();
 
   const str: string = `${data}`;
 
