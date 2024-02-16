@@ -61,7 +61,7 @@ export async function GET() {
       <div
             style={{
               fontSize: 20,
-              fontWeight: 200,
+              fontWeight: 500,
               letterSpacing: -2,
               color: 'yellow',
               textAlign: 'right',
