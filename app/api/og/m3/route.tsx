@@ -11,9 +11,17 @@ export async function GET() {
 
 
   let data = await kv.get('m3');
-  let lastFetchTimestamp: number = 0;
-  lastFetchTimestamp = await kv.get('lastUpdate');
-  let timeStamp: string = new Date(lastFetchTimestamp).toLocaleString();
+
+  let lastFetchTimestamp:number = await kv.get('lastUpdate');
+
+  if (lastFetchTimestamp !== null) {
+    let timeStamp: string = new Date(lastFetchTimestamp).toLocaleString();
+    console.log(timeStamp);
+  } else {
+    console.log("Unable to fetch last update timestamp.");
+  }
+
+
 
   const str: string = `${data}`;
 
