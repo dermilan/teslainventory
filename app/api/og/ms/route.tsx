@@ -26,8 +26,8 @@ export async function GET() {
       <div
         
       style={{
-        fontSize: 40,
-        fontWeight: 700,
+        fontSize: 60,
+        fontWeight: 200,
         letterSpacing: -2,
         backgroundImage: `url('${NEXT_PUBLIC_URL}/models-min.png')`,
         color: 'yellow',
