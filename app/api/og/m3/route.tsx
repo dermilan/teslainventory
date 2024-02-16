@@ -67,7 +67,7 @@ export async function GET() {
               textAlign: 'right',
               position: 'absolute', // Add position absolute
               top: 10, // Position at the bottom
-              right: 300, // Position at the right
+              right: 280, // Position at the right
 
               }}
       >
