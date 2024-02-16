@@ -61,13 +61,13 @@ export async function GET() {
       <div
             style={{
               fontSize: 20,
-              fontWeight: 500,
+              fontWeight: 200,
               letterSpacing: -2,
               color: 'yellow',
               textAlign: 'right',
               position: 'absolute', // Add position absolute
               top: 10, // Position at the bottom
-              right: 100, // Position at the right
+              right: 500, // Position at the right
 
               }}
       >
