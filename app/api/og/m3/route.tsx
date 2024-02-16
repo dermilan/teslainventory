@@ -11,6 +11,8 @@ export async function GET() {
 
 
   let data = await kv.get('m3');
+  let timeStamp: string = new Date(kv.get('lastUpdate')).toLocaleString();
+
   const str: string = `${data}`;
 
   const fontData = await fetch(
@@ -20,23 +22,49 @@ export async function GET() {
   return new ImageResponse(
     (
       
+
+      <div
+      style={{
+        display: 'flex',
+        backgroundImage: `url('${NEXT_PUBLIC_URL}/model3-min.png')`,
+        width: '100%',
+        height: '100%',
+        padding: '50px 200px',
+      }}
+      >
+
       <div
         
       style={{
         fontSize: 60,
         fontWeight: 200,
         letterSpacing: -2,
-        backgroundImage: `url('${NEXT_PUBLIC_URL}/model3-min.png')`,
         color: 'yellow',
-        width: '100%',
-        height: '100%',
-        padding: '50px 200px',
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'flex-end',
         }}
       >
       {`Model 3: Currently ${str} available in the US.`}
+      </div>
+
+      <div
+            style={{
+              fontSize: 20,
+              fontWeight: 200,
+              letterSpacing: -2,
+              color: 'yellow',
+              textAlign: 'right',
+              position: 'absolute', // Add position absolute
+              top: 10, // Position at the bottom
+              right: 10, // Position at the right
+
+              }}
+      >
+      {`Data fetched: ${timeStamp}`}
+      </div>
+
+
       </div>
     ),
     {
