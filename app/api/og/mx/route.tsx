@@ -13,6 +13,11 @@ export async function GET() {
   let data = await kv.get('mx');
   const str: string = `${data}`;
 
+  const fontData = await fetch(
+    new URL('../../../../public/ProtoMonoRegular.ttf', import.meta.url),
+  ).then((res) => res.arrayBuffer());
+
+
   return new ImageResponse(
     (
       
@@ -38,6 +43,13 @@ export async function GET() {
     {
       width: 1440,
       height: 900,
+      fonts: [
+        {
+          name: 'Proto',
+          data: fontData,
+          style: 'normal',
+        },
+      ],
     },
   );
 }
