@@ -9,6 +9,7 @@ export const runtime = 'edge';
 
 export async function GET() {
 
+  const res = await fetch(NEXT_PUBLIC_URL);
 
   let data = await kv.get('ms');
   let lastFetchTimestamp:number | null = await kv.get('lastUpdate');
