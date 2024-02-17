@@ -61,8 +61,6 @@ export async function GET() {
             style={{
               fontSize: 20,
               fontWeight: 200,
-              backgroundColor: 'black',
-              backgroundBlendMode: 'difference',
               letterSpacing: -2,
               color: 'yellow',
               textAlign: 'right',
